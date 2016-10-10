@@ -11,42 +11,12 @@ Selección de Empresas.
 
 + Request (application/json)
 
-        {
-          "mensaje_dec": {
-            "header": {
-                        "usuario":      "123456785",
-                        "fecha":        "2015-01-07T14:03:43Z",
-                        "accion":       2,
-                        "descripcion":  "Menu Usuarios - Accion Ingresar Usuario"
-                      },
-            "mensaje": 
-            [
-                    {
-                        "_id":    6,
-                        "estado": "Pendiente,Activo,Cerrado",
-                        "datosDemograficos": 
-                            {
-                                "razonSocial": "Razon social de Prueba",
-                                "nombreFantasia": "Empresa de Prueba Ratifica",
-                                "Rut": "123456785",
-                                "codigoActividadEconomica": 12345,
-                                "clasificacionSVS": "PCL",
-                                "codigoNacionalidad": "CL"
-                            },
-                        "datosContractuales": 
-                            {
-                              "tipoContratoID": "DEC",
-                              "fechaContrato": "2015-01-07T14:03:43Z"
-                            }
-                    }
-            ],
-            "datosAuditoria": 
-                    {
-                          "fechaOperacion": "2015-01-07T14:03:43Z",
-                          "usuarioOperacion": "123456785"
-                    }
-          }
-        }
+        + mensaje_dec
+            + header
+                 - usuario
+                 - fecha
+                 - accion
+                 - descripcion
 
 + Response 200 (application/json)
 
