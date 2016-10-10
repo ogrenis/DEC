@@ -1,0 +1,119 @@
+FORMAT: 1A
+HOST: http://54.68.89.158/apis/dec/clientes/
+
+# empresaSolicitada
+
+Selección de Empresas.
+
+## Consulta Empresa [/empresaSolicitada]
+
+### List All Questions [GET]
+
++ Request (application/json)
+
+        {
+          "mensaje_dec": {
+            "header": {
+                        "usuario":      "123456785",
+                        "fecha":        "2015-01-07T14:03:43Z",
+                        "accion":       2,
+                        "descripcion":  "Menu Usuarios - Accion Ingresar Usuario"
+                      },
+            "mensaje": 
+            [
+                    {
+                        "_id":    6,
+                        "estado": "Pendiente,Activo,Cerrado",
+                        "datosDemograficos": 
+                            {
+                                "razonSocial": "Razon social de Prueba",
+                                "nombreFantasia": "Empresa de Prueba Ratifica",
+                                "Rut": "123456785",
+                                "codigoActividadEconomica": 12345,
+                                "clasificacionSVS": "PCL",
+                                "codigoNacionalidad": "CL"
+                            },
+                        "datosContractuales": 
+                            {
+                              "tipoContratoID": "DEC",
+                              "fechaContrato": "2015-01-07T14:03:43Z"
+                            }
+                    }
+            ],
+            "datosAuditoria": 
+                    {
+                          "fechaOperacion": "2015-01-07T14:03:43Z",
+                          "usuarioOperacion": "123456785"
+                    }
+          }
+        }
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2048
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
